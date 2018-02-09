@@ -16,6 +16,8 @@ app.use(bodyParser.urlencoded({ extended: true })); // For parsing application/x
 app.use(express.static(__dirname + '/public')); // Allow front end to access public folder
 app.use('/api', appRoutes); // Assign name to end points (e.g., '/api/management/', '/api/users' ,etc. )
 
+app.set('view engine', 'ejs');
+
 // 
 // <---------- REPLACE WITH YOUR MONGOOSE CONFIGURATION ---------->
 // 

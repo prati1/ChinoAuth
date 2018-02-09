@@ -66,7 +66,6 @@
 </div> -->
 <!-- Heading -->
 
-<br>
 
 <!-- Loading Icon (Bootstrap) -->
 <!-- <div class="jumbotron text-center" ng-show="management.loading">
@@ -75,11 +74,9 @@
 </div> -->
 <!-- Loading Icon (Bootstrap) -->
 
-<br>
-
 <!-- Input For Filter  -->
 <div class="container">
-        <section id="typography">
+       <!--  <section id="typography"> -->
           <div class="page-header">
             <h1 style="color: #7F5454">Design your own T-shirt</h1>
             <h3 style="color: #800000"><p><i>"Unleash your creativity. Design the way you want"</i></p><h3>
@@ -136,7 +133,7 @@
                          <div class="input-append">
                               <input class="span2 form-control input-lg" id="text-string" type="text" placeholder="Text to be inserted">
 
-                              <button id="add-text" class="btn btn-link" title="Add text"><i class="icon-share-alt"></i></button>
+                              <button id="add-text" class="btn btn-link" title="Add text"><img src="assets/images/forward.png" height="" width=""></button>
                               <hr>
                             </div>        
                      </div>                
@@ -195,10 +192,10 @@
                             <!-- The code that I changed to bring the front and back view..Check properly for mistakes -->            
                             <div class="pull-right" align="" id="imageeditor" style="display:none">
                               <div class="btn-group">                                             
-                                  <button class="btn" id="bring-to-front" title="Bring to Front"><i class="icon-fast-backward rotate" style="height:19px;"></i></button>
-                                  <button class="btn" id="send-to-back" title="Send to Back"><i class="icon-fast-forward rotate" style="height:19px;"></i></button>
-                                  <button id="flip" type="button" class="btn" title="Show Back View"><i class="icon-retweet" style="height:19px;"></i></button>
-                                  <button id="remove-selected" class="btn" title="Delete selected item"><i class="icon-trash" style="height:19px;"></i></button>
+                                  <button class="btn" id="bring-to-front" title="Bring to Front"><img src="assets/images/right-arrow.png" height="19px" width=""></button>
+                                  <button class="btn" id="send-to-back" title="Send to Back"><img src="assets/images/left-arrow.png" height="19px" width=""></button>
+                                  <button id="flip" type="button" class="btn" title="Show Back View"><img src="assets/images/reverse.png" height="19px" width=""></button>
+                                  <button id="remove-selected" class="btn" title="Delete selected item"><img src="assets/images/delete.png" height="19px" width=""></button>
                               </div>
                             </div>            
                         </div>                                              
@@ -225,6 +222,8 @@
             <tr class="active">
                 <th>Price per unit:</th>
                 <th>Rs. 1000</th>
+                <a href="#" class="button" id="btn-download" download="my-file-name.png">Download</a>
+                <input id = "b" type = "button" value="Save as Image" />
             </tr>
             </table>
             <div class="div1">  
@@ -288,6 +287,12 @@
 
         <script type="text/javascript">
 
+          var button = document.getElementById('btn-download');
+button.addEventListener('click', function (e) {
+    var dataURL = canvas.toDataURL('image/png');
+    button.href = dataURL;
+});
+
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-35639689-1']);
   _gaq.push(['_trackPageview']);
@@ -301,6 +306,12 @@
 </script>
 
 <script>
+
+  $("#b").click(function(){
+  $("#tcanvas").get(0).toBlob(function(blob){
+    saveAs(blob,"myimg.png")
+  })
+})
 
 
 
@@ -339,10 +350,10 @@ function downloadFabric(canvas,name){
 
  </script>
  <script src="assets/js/bootstrap.js"></script>
-  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<!--   <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -356,6 +367,8 @@ function downloadFabric(canvas,name){
 <!--     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
  -->    <script type="text/javascript" src="assets/js/fabric.js"></script>
     <script type="text/javascript" src="assets/js/tshirtEditor.js"></script>
+    <script type="text/javascript" src="assets/js/FileSaver.js"></script>
+    <script type="text/javascript" src="assets/js/canvas-toblob.js"></script>
     <script type="text/javascript" src="assets/js/jquery.miniColors.min.js"></script>
 <!--     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script> -->
     

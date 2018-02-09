@@ -4,6 +4,9 @@ var secret = 'harrypotter'; // Create custom secret for use in JWT
 var nodemailer = require('nodemailer'); // Import Nodemailer Package
 var sgTransport = require('nodemailer-sendgrid-transport'); // Import Nodemailer Sengrid Transport Package
 
+//const express = require('express');
+//const router = express.Router();
+
 module.exports = function(router) {
 
     // Start Sendgrid Configuration Settings (Use only if using sendgrid)
@@ -1123,3 +1126,5 @@ module.exports = function(router) {
 
     return router; // Return the router object to server
 };
+
+//module.exports = router;

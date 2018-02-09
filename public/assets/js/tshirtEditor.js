@@ -371,4 +371,10 @@ else {
 }
 }*/
 
+$("#b").click(function(){
+	$("#tcanvas").get(0).toBlob(function(blob){
+		saveAs(blob,"myimg.png")
+	})
+})
+
 
